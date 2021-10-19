@@ -6,14 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var firulais = {
+  var Michu = {
     nombre: nombre,
     edad: edad,
     meow: function(){
-      return 'Meow!'
+      return 'Meow!';
     }
   };
-  return firulais;
+  return Michu;
 }
 
 
@@ -66,17 +66,20 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  return usuario.email != undefined;
+  if (usuario.email) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
-
-
 
 function tienePropiedad(objeto, propiedad) {
   // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (objeto[propiedad]) {
+  if (objeto[propiedad]){
     return true;
   }
   else {
@@ -128,8 +131,8 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  var suma = 0;
-  for (var x = 0; x < usuario.posts.length; x++){
+  suma = 0;
+  for (var x = 0; x < usuario.posts.length; x++) {
     suma += usuario.posts[x].likes;
   }
   return suma;
@@ -146,9 +149,9 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function(){
-      return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
-    };
-    return producto;
+    return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
+  }
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
